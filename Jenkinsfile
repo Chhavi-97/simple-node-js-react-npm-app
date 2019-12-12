@@ -1,14 +1,10 @@
 pipeline {
     agent {
-        docker {
-            image 'node:6-alpine' 
-            args '-p 3000:3000' 
-        }
-    }
     stages {
         stage('Build') { 
             steps {
-                sh 'npm install' 
+                sh 'cd /var/lib/jenkins/workspace/react-test2'
+                sh 'npm start'
             }
         }
     }
